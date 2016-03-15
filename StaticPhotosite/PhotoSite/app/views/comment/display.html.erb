@@ -1,0 +1,15 @@
+<h1>Comments</h1>
+<% if @comments.count > 0 %>
+<% @comments.each do |comment| %>
+<div class="alert alert-success">
+  <strong>Comment:</strong> <%= comment.comment_text %><br/>
+  <strong>Date:</strong> <%= comment.date_time %><br/>
+  <strong>Commented By:</strong> <%= comment.user.first_name %> <%= comment.user.last_name %>
+</div>
+<% end %>
+<% else %>
+    <div class="alert alert-danger">
+      No Comments Found
+
+    </div>
+<% end %>

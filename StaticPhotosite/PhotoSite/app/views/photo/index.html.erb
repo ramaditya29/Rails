@@ -1,0 +1,14 @@
+<% @user.each do |user| %>
+<h1> Photos of <%= user.first_name %> <%= user.last_name %></h1>
+<% end %>
+<% @photos.each do |photo| %>
+    <div class="col-md-12">
+
+      <%= image_tag(photo.file_name, alt: 'No file', :size => "260x180") %>
+      <p>Photo created at: <%= photo.date_time %> </p>
+
+      <%= link_to "Get Photo Comments",  photo_comments_path(photo.id) %>
+      <hr/>
+    </div>
+    <br/>
+<% end %>
